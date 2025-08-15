@@ -44,9 +44,9 @@
                 <!-- Desktop Navigation -->
                 <div class="hidden md:flex items-center space-x-6">
                     <a href="#home" class="nav-link text-gray-800 font-medium hover:text-primary">Home</a>
-                    <a href="#" class="nav-link text-gray-800 font-medium hover:text-secondary">Shop</a>
-                    <a href="#" class="nav-link text-gray-800 font-medium hover:text-primary">About Us</a>
-                    <a href="#" class="nav-link text-gray-800 font-medium hover:text-secondary">Contact</a>
+                    <a href="shop.html" class="nav-link text-gray-800 font-medium hover:text-secondary">Shop</a>
+                    <a href="about.html" class="nav-link text-gray-800 font-medium hover:text-primary">About Us</a>
+                    <a href="contact.html" class="nav-link text-gray-800 font-medium hover:text-secondary">Contact</a>
                     <a href="#" class="ml-4 bg-primary hover:bg-pink-600 text-white font-medium py-2 px-6 rounded-full transition duration-300">
                         <i class="fas fa-shopping-cart mr-2"></i> Cart
                     </a>
@@ -63,10 +63,10 @@
             <!-- Mobile Navigation -->
             <div class="md:hidden hidden py-4" id="mobile-menu">
                 <div class="flex flex-col space-y-4">
-                    <a href="#" class="nav-link text-gray-800 font-medium hover:text-primary">Home</a>
-                    <a href="#" class="nav-link text-gray-800 font-medium hover:text-secondary">Shop</a>
-                    <a href="#" class="nav-link text-gray-800 font-medium hover:text-primary">About Us</a>
-                    <a href="#" class="nav-link text-gray-800 font-medium hover:text-secondary">Contact</a>
+                    <a href="#home" class="nav-link text-gray-800 font-medium hover:text-primary">Home</a>
+                    <a href="#shop" class="nav-link text-gray-800 font-medium hover:text-secondary">Shop</a>
+                    <a href="#about" class="nav-link text-gray-800 font-medium hover:text-primary">About Us</a>
+                    <a href="#contact" class="nav-link text-gray-800 font-medium hover:text-secondary">Contact</a>
                     <a href="#" class="bg-primary hover:bg-pink-600 text-white font-medium py-2 px-6 rounded-full text-center transition duration-300">
                         <i class="fas fa-shopping-cart mr-2"></i> Cart
                     </a>
@@ -134,13 +134,93 @@
         </div>
     </section>
 
-    <script>
-        // Mobile menu hamburger
-        document.getElementById('mobile-menu-button').addEventListener('click', function() {
-            const menu = document.getElementById('mobile-menu');
-            menu.classList.toggle('hidden');
-        });
-    </script>
-    
+</body>
+
+<!-- Shop Section -->
+<section id="shop" class="py-20 bg-lightpink">
+    <div class="container mx-auto px-6">
+        <h2 class="text-3xl font-playfair font-bold text-secondary mb-6 text-center">Shop</h2>
+        <p class="text-gray-700 text-center mb-8">Browse our selection of luxurious chocolates and floral arrangements.</p>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="bg-white rounded-xl shadow-lg p-6 flex flex-col items-center">
+                <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836" alt="Chocolate Box" class="w-32 h-32 object-cover rounded-full mb-4">
+                <h3 class="font-playfair text-xl font-bold text-primary mb-2">Chocolate Box</h3>
+                <p class="text-gray-600 mb-2">Assorted luxury chocolates</p>
+                <span class="text-secondary font-semibold">$29.99</span>
+            </div>
+            <div class="bg-white rounded-xl shadow-lg p-6 flex flex-col items-center">
+                <img src="https://images.unsplash.com/photo-1465101046530-73398c7f28ca" alt="Rose Bouquet" class="w-32 h-32 object-cover rounded-full mb-4">
+                <h3 class="font-playfair text-xl font-bold text-primary mb-2">Rose Bouquet</h3>
+                <p class="text-gray-600 mb-2">Elegant fresh roses</p>
+                <span class="text-secondary font-semibold">$39.99</span>
+            </div>
+            <div class="bg-white rounded-xl shadow-lg p-6 flex flex-col items-center">
+                <img src="https://images.unsplash.com/photo-1519864600265-abb23847ef2c" alt="Gift Combo" class="w-32 h-32 object-cover rounded-full mb-4">
+                <h3 class="font-playfair text-xl font-bold text-primary mb-2">Gift Combo</h3>
+                <p class="text-gray-600 mb-2">Chocolates & flowers together</p>
+                <span class="text-secondary font-semibold">$59.99</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- About Us Section -->
+<section id="about" class="py-20 bg-white">
+    <div class="container mx-auto px-6">
+        <h2 class="text-3xl font-playfair font-bold text-primary mb-6 text-center">About Us</h2>
+        <p class="text-gray-700 text-center mb-8">Learn more about our story and passion for chocolate and flowers.</p>
+        <div class="max-w-2xl mx-auto mb-10 text-center">
+            <p class="text-lg text-gray-600">Petals & Truffles was founded to bring together the elegance of flowers and the indulgence of chocolate. Our team is passionate about creating memorable gifts for every occasion.</p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="bg-lightpink rounded-xl shadow p-6 flex flex-col items-center">
+                <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Founder" class="w-24 h-24 object-cover rounded-full mb-3">
+                <h4 class="font-playfair text-lg font-bold text-primary mb-1">Lourdes N.</h4>
+                <p class="text-gray-600 text-sm">Founder & Chocolatier</p>
+            </div>
+            <div class="bg-lightpurple rounded-xl shadow p-6 flex flex-col items-center">
+                <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Florist" class="w-24 h-24 object-cover rounded-full mb-3">
+                <h4 class="font-playfair text-lg font-bold text-secondary mb-1">Alex M.</h4>
+                <p class="text-gray-600 text-sm">Lead Florist</p>
+            </div>
+            <div class="bg-lightpink rounded-xl shadow p-6 flex flex-col items-center">
+                <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="Designer" class="w-24 h-24 object-cover rounded-full mb-3">
+                <h4 class="font-playfair text-lg font-bold text-primary mb-1">Sofia R.</h4>
+                <p class="text-gray-600 text-sm">Gift Designer</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Contact Section -->
+<section id="contact" class="py-20 bg-lightpurple">
+    <div class="container mx-auto px-6">
+        <h2 class="text-3xl font-playfair font-bold text-secondary mb-6 text-center">Contact</h2>
+        <p class="text-gray-700 text-center mb-8">Get in touch with us for custom arrangements or inquiries.</p>
+        <form class="max-w-xl mx-auto bg-white rounded-xl shadow-lg p-8">
+            <div class="mb-4">
+                <label for="name" class="block text-gray-700 font-medium mb-2">Name</label>
+                <input type="text" id="name" name="name" class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:border-primary" required>
+            </div>
+            <div class="mb-4">
+                <label for="email" class="block text-gray-700 font-medium mb-2">Email</label>
+                <input type="email" id="email" name="email" class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:border-secondary" required>
+            </div>
+            <div class="mb-4">
+                <label for="message" class="block text-gray-700 font-medium mb-2">Message</label>
+                <textarea id="message" name="message" rows="4" class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:border-primary" required></textarea>
+            </div>
+            <button type="submit" class="bg-primary hover:bg-pink-600 text-white font-medium py-2 px-6 rounded-full transition duration-300">Send Message</button>
+        </form>
+    </div>
+</section>
+
+<script>
+    // Mobile menu hamburger
+    document.getElementById('mobile-menu-button').addEventListener('click', function() {
+        const menu = document.getElementById('mobile-menu');
+        menu.classList.toggle('hidden');
+    });
+</script>
 </body>
 </html>
