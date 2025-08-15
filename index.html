@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Petals & Truffles - Chocolate & Flowers</title>
+    <meta name="description" content="Luxurious chocolate and floral arrangements for every occasion">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#ec4899",
+                        secondary: "#8b5cf6", 
+                        lightpink: "#fce7f3", 
+                        lightpurple: "#f3e8ff" 
+                    },
+                    fontFamily: {
+                        'playfair': ['"Playfair Display"', 'serif'],
+                        'montserrat': ['Montserrat', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="font-montserrat" id="home">
+    <!-- Navigation Bar -->
+    <nav class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
+                <!-- Logo on the navbar -->
+                <div class="flex items-center">
+                    <span class="font-playfair text-2xl font-bold">
+                        <span class="text-primary">Petals</span> & <span class="text-secondary">Truffles</span>
+                    </span>
+                </div>
+                
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex items-center space-x-6">
+                    <a href="#home" class="nav-link text-gray-800 font-medium hover:text-primary">Home</a>
+                    <a href="#" class="nav-link text-gray-800 font-medium hover:text-secondary">Shop</a>
+                    <a href="#" class="nav-link text-gray-800 font-medium hover:text-primary">About Us</a>
+                    <a href="#" class="nav-link text-gray-800 font-medium hover:text-secondary">Contact</a>
+                    <a href="#" class="ml-4 bg-primary hover:bg-pink-600 text-white font-medium py-2 px-6 rounded-full transition duration-300">
+                        <i class="fas fa-shopping-cart mr-2"></i> Cart
+                    </a>
+                </div>
+                
+                <!-- Mobile menu button -->
+                <div class="md:hidden flex items-center">
+                    <button type="button" class="text-gray-800 hover:text-primary focus:outline-none" id="mobile-menu-button">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Mobile Navigation -->
+            <div class="md:hidden hidden py-4" id="mobile-menu">
+                <div class="flex flex-col space-y-4">
+                    <a href="#" class="nav-link text-gray-800 font-medium hover:text-primary">Home</a>
+                    <a href="#" class="nav-link text-gray-800 font-medium hover:text-secondary">Shop</a>
+                    <a href="#" class="nav-link text-gray-800 font-medium hover:text-primary">About Us</a>
+                    <a href="#" class="nav-link text-gray-800 font-medium hover:text-secondary">Contact</a>
+                    <a href="#" class="bg-primary hover:bg-pink-600 text-white font-medium py-2 px-6 rounded-full text-center transition duration-300">
+                        <i class="fas fa-shopping-cart mr-2"></i> Cart
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-gradient h-27 flex items-center relative overflow-hidden pt-16">
+        <div class="absolute inset-0 z-0">
+            <div class="absolute top-3 left-10 w-32 h-32 rounded-full bg-purple-200 opacity-30 blur-xl"></div>
+            <div class="absolute bottom-20 right-10 w-40 h-40 rounded-full bg-pink-200 opacity-30 blur-xl"></div>
+        </div>
+        
+        <div class="container mx-auto px-6 py-16 md:py-24 relative z-10">
+            <div class="flex flex-col md:flex-row items-center">
+                <!-- Text Content -->
+                <div class="md:w-1/2 mb-12 md:mb-0 text-center md:text-left">
+                    <h1 class="font-playfair text-4xl md:text-6xl font-bold text-gray-800 mb-6">
+                        <span class="text-primary">Petals</span> & <span class="text-secondary">Truffles</span>
+                    </h1>
+                    <p class="text-lg md:text-xl text-gray-600 mb-8 max-w-lg">
+                        Where floral elegance meets chocolate indulgence. Perfect combinations for every special occasion in your life. <br> Love, wrapped in petals and chocolate
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
+                        <a href="#" class="bg-primary hover:bg-pink-600 text-white font-medium py-3 px-8 rounded-full transition duration-300 transform hover:scale-105 shadow-lg shadow-pink-200">
+                            Shop Now
+                        </a>
+                        <a href="#" class="border-2 border-secondary text-secondary hover:bg-secondary hover:text-white font-medium py-3 px-8 rounded-full transition duration-300 transform hover:scale-105">
+                            Custom Arrangements
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Image Content -->
+                <div class="md:w-1/2 relative">
+                    <div class="relative max-w-md mx-auto">
+                        <img src="https://www.pablogiftshop.com/wp-content/uploads/2021/08/passion-flower-box-roses-baby-breath-and-chocolates-2.jpg" alt="Luxury chocolate box with flowers" class="rounded-2xl shadow-xl w-full h-auto floating" loading="lazy">
+                        <div class="absolute -bottom-6 -left-6 bg-white p-4 rounded-xl shadow-lg">
+                            <div class="flex items-center">
+                                <div class="bg-lightpink p-2 rounded-full mr-3">
+                                    <i class="bi bi-clock" style="font-size: 1rem; color: purple;"></i>
+                                </div>
+                                <div>
+                                    <p class="text-xs text-gray-500">Delivery in</p>
+                                    <p class="font-semibold text-gray-800">24-48 Hours</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="absolute -top-6 -right-9 bg-white p-4 rounded-xl shadow-lg">
+                            <div class="flex items-center">
+                                <div class="bg-lightpurple p-3 rounded-full mr-3">
+                                   <i class="bi bi-cart" style="font-size: 1.2rem; color:purple;"></i>
+                                </div>
+                                <div>
+                                    <p class="text-xs text-gray-500">Over</p>
+                                    <p class="font-semibold text-gray-800">100+ Products</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Mobile menu toggle
+        document.getElementById('mobile-menu-button').addEventListener('click', function() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        });
+    </script>
+    
+</body>
+</html>
