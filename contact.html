@@ -4,28 +4,215 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact - Petals & Truffles</title>
-    <link rel="stylesheet" href="style.css">
+    <meta name="description" content="Get in touch with Petals & Truffles for custom floral and chocolate arrangements in Kenya">
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#ec4899",
+                        secondary: "#8b5cf6",
+                        lightpink: "#fce7f3",
+                        lightpurple: "#f3e8ff"
+                    },
+                    fontFamily: {
+                        'playfair': ['"Playfair Display"', 'serif'],
+                        'montserrat': ['Montserrat', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
 </head>
-<body>
-    <nav>
-        <a href="index.html">Home</a> |
-        <a href="shop.html">Shop</a> |
-        <a href="about.html">About Us</a> |
-        <a href="contact.html">Contact</a>
+<body class="font-montserrat bg-lightpink">
+    <!-- Navigation Bar -->
+    <nav class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
+                <!-- Logo -->
+                <div class="flex items-center">
+                    <span class="font-playfair text-2xl font-bold">
+                        <span class="text-primary">Petals</span> & <span class="text-secondary">Truffles</span>
+                    </span>
+                </div>
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex items-center space-x-6">
+                    <a href="index.html" class="nav-link text-gray-800 font-medium hover:text-primary">Home</a>
+                    <a href="shop.html" class="nav-link text-gray-800 font-medium hover:text-secondary">Shop</a>
+                    <a href="about.html" class="nav-link text-gray-800 font-medium hover:text-primary">About Us</a>
+                    <a href="contact.html" class="nav-link text-gray-800 font-medium hover:text-secondary">Contact</a>
+                    <a href="#" class="ml-4 bg-primary hover:bg-pink-600 text-white font-medium py-2 px-6 rounded-full transition duration-300">
+                        <i class="fas fa-shopping-cart mr-2"></i> Cart
+                    </a>
+                </div>
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden flex items-center">
+                    <button type="button" class="text-gray-800 hover:text-primary focus:outline-none" id="mobile-menu-button">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+            <!-- Mobile Navigation -->
+            <div class="md:hidden hidden py-4" id="mobile-menu">
+                <div class="flex flex-col space-y-4">
+                    <a href="index.html" class="nav-link text-gray-800 font-medium hover:text-primary">Home</a>
+                    <a href="shop.html" class="nav-link text-gray-800 font-medium hover:text-secondary">Shop</a>
+                    <a href="about.html" class="nav-link text-gray-800 font-medium hover:text-primary">About Us</a>
+                    <a href="contact.html" class="nav-link text-gray-800 font-medium hover:text-secondary">Contact</a>
+                    <a href="#" class="bg-primary hover:bg-pink-600 text-white font-medium py-2 px-6 rounded-full text-center transition duration-300">
+                        <i class="fas fa-shopping-cart mr-2"></i> Cart
+                    </a>
+                </div>
+            </div>
+        </div>
     </nav>
-    <main>
-        <h1>Contact</h1>
-        <p>Get in touch with us for custom arrangements or inquiries.</p>
-        <form>
-            <label for="name">Name:</label><br>
-            <input type="text" id="name" name="name"><br>
-            <label for="email">Email:</label><br>
-            <input type="email" id="email" name="email"><br>
-            <label for="message">Message:</label><br>
-            <textarea id="message" name="message"></textarea><br>
-            <button type="submit">Send Message</button>
-        </form>
+
+    <!-- Contact Section -->
+    <main class="container mx-auto px-6 py-16">
+        <section class="text-center mb-12">
+            <h1 class="font-playfair text-4xl md:text-5xl font-bold text-gray-800 mb-6">
+                <span class="text-primary">Jambo!</span> Let's Connect
+            </h1>
+            <p class="text-lg md:text-xl text-gray-600 max-w-2xl mx-auto">
+                Karibu to Petals & Truffles! Whether you're planning a special occasion in Nairobi or want a bespoke floral and chocolate arrangement inspired by Kenya’s vibrant blooms, we’re here to help. Reach out via WhatsApp, M-Pesa, or our form below.
+            </p>
+        </section>
+
+        <div class="flex flex-col md:flex-row gap-12">
+            <!-- Contact Form -->
+            <div class="md:w-1/2 bg-white p-8 rounded-xl shadow-lg">
+                <h2 class="font-playfair text-2xl font-semibold text-secondary mb-6">Send Us a Message</h2>
+                <form action="#" method="POST" class="space-y-6">
+                    <div>
+                        <label for="name" class="block text-sm font-medium text-gray-700">Your Name</label>
+                        <input type="text" id="name" name="name" required class="mt-1 w-full p-3 border border-gray-300 rounded-lg focus:ring-primary focus:border-primary">
+                    </div>
+                    <div>
+                        <label for="email" class="block text-sm font-medium text-gray-700">Email Address</label>
+                        <input type="email" id="email" name="email" required class="mt-1 w-full p-3 border border-gray-300 rounded-lg focus:ring-primary focus:border-primary">
+                    </div>
+                    <div>
+                        <label for="phone" class="block text-sm font-medium text-gray-700">Phone Number (e.g., +254 799 234 811)</label>
+                        <input type="tel" id="phone" name="phone" pattern="\+254\s?[1-9][0-9]{8}" placeholder="+254 799 234 811" class="mt-1 w-full p-3 border border-gray-300 rounded-lg focus:ring-primary focus:border-primary">
+                    </div>
+                    <div>
+                        <label for="message" class="block text-sm font-medium text-gray-700">Your Message</label>
+                        <textarea id="message" name="message" rows="5" required class="mt-1 w-full p-3 border border-gray-300 rounded-lg focus:ring-primary focus:border-primary"></textarea>
+                    </div>
+                    <button type="submit" class="w-full bg-primary hover:bg-pink-600 text-white font-medium py-3 px-6 rounded-full transition duration-300 transform hover:scale-105">
+                        Send Message
+                    </button>
+                </form>
+            </div>
+
+            <!-- Contact Info -->
+            <div class="md:w-1/2">
+                <h2 class="font-playfair text-2xl font-semibold text-secondary mb-6">Get in Touch</h2>
+                <div class="space-y-6">
+                    <div class="flex items-center">
+                        <div class="bg-lightpurple p-3 rounded-full mr-4">
+                            <i class="bi bi-telephone-fill text-secondary"></i>
+                        </div>
+                        <div>
+                            <p class="text-sm text-gray-500">Call or WhatsApp</p>
+                            <a href="tel:+254799234811" class="text-gray-800 font-semibold hover:text-primary">+254 799 234 811</a>
+                        </div>
+                    </div>
+                    <div class="flex items-center">
+                        <div class="bg-lightpurple p-3 rounded-full mr-4">
+                            <i class="bi bi-envelope-fill text-secondary"></i>
+                        </div>
+                        <div>
+                            <p class="text-sm text-gray-500">Email Us</p>
+                            <a href="mailto:petalsandtruffles@gmail.com" class="text-gray-800 font-semibold hover:text-primary">petalsandtruffles@gmail.com</a>
+                        </div>
+                    </div>
+                    <div class="flex items-center">
+                        <div class="bg-lightpurple p-3 rounded-full mr-4">
+                            <i class="bi bi-geo-alt-fill text-secondary"></i>
+                        </div>
+                        <div>
+                            <p class="text-sm text-gray-500">Visit Us</p>
+                            <p class="text-gray-800 font-semibold">Westlands, Nairobi, Kenya</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center">
+                        <div class="bg-lightpurple p-3 rounded-full mr-4">
+                            <i class="bi bi-cash-stack text-secondary"></i>
+                        </div>
+                        <div>
+                            <p class="text-sm text-gray-500">M-Pesa Payments</p>
+                            <p class="text-gray-800 font-semibold">Paybill: 123456 | Account: Petals & Truffles</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-8">
+                    <h3 class="font-playfair text-xl font-semibold text-secondary mb-4">Our Hours</h3>
+                    <p class="text-gray-600">Monday - Saturday: 8:00 AM - 6:00 PM (EAT)</p>
+                    <p class="text-gray-600">Sunday: 10:00 AM - 4:00 PM (EAT)</p>
+                </div>
+            </div>
+        </div>
     </main>
+
+    <!-- Footer -->
+    <footer class="bg-white shadow-sm mt-16">
+        <section class="container mx-auto px-6 py-8">
+            <div class="flex flex-col md:flex-row justify-between gap-8">
+                <div>
+                    <h3 class="font-playfair text-xl font-semibold text-secondary mb-4">Get in Touch</h3>
+                    <div class="space-y-4">
+                        <div class="flex items-center">
+                            <img src="https://images.unsplash.com/vector-1739891194542-d8369915ea0c?q=80&w=880&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="phone" class="w-6 h-6 mr-3">
+                            <a href="tel:+254799234811" class="text-gray-800 hover:text-primary">+254 799 234 811</a>
+                        </div>
+                        <div class="flex items-center">
+                            <img src="https://images.unsplash.com/vector-1738926381272-b47b214c3df5?q=80&w=880&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="email" class="w-6 h-6 mr-3">
+                            <a href="mailto:petalsandtruffles@gmail.com" class="text-gray-800 hover:text-primary">petalsandtruffles@gmail.com</a>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="font-playfair text-xl font-semibold text-secondary mb-4">Our Company</h3>
+                    <ul class="space-y-2 text-gray-600">
+                        <li><a href="#" class="hover:text-primary">Frequently Asked Questions (FAQs)</a></li>
+                        <li><a href="#" class="hover:text-primary">Flowers Care Guide</a></li>
+                        <li><a href="#" class="hover:text-primary">Shop Location</a></li>
+                        <li><a href="#" class="hover:text-primary">Our Reviews</a></li>
+                        <li><a href="#" class="hover:text-primary">Blog</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="font-playfair text-xl font-semibold text-secondary mb-4">Account Info</h3>
+                    <ul class="space-y-2 text-gray-600">
+                        <li><a href="#" class="hover:text-primary">My Account</a></li>
+                        <li><a href="#" class="hover:text-primary">Return Policy</a></li>
+                        <li><a href="#" class="hover:text-primary">Refund Policy</a></li>
+                        <li><a href="#" class="hover:text-primary">Delivery Policy</a></li>
+                        <li><a href="#" class="hover:text-primary">Shipping Zones</a></li>
+                        <li><a href="#" class="hover:text-primary">Terms of Service</a></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        <section class="bg-gray-100 py-4">
+            <div class="container mx-auto px-6 text-center">
+                <p class="text-gray-600">&copy; Petals & Truffles Ltd 2025</p>
+            </div>
+        </section>
+    </footer>
+
+    <script>
+        // Mobile menu hamburger
+        document.getElementById('mobile-menu-button').addEventListener('click', function() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        });
+    </script>
 </body>
 </html>
