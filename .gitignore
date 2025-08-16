@@ -1,0 +1,9 @@
+.create_db.py
+.venv/
+venv/ 
+__pycache__/ 
+*.pyc
+instance
+.vscode/settings.json
+vscode/settings.json
+requirments.txt

@@ -6,6 +6,7 @@
     <title>Shop - Petals & Truffles</title>
     <meta name="description" content="Browse our luxurious chocolates and floral arrangements for every occasion">
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="/static/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -41,11 +42,12 @@
                 </div>
                 <!-- Desktop Navigation -->
                 <div class="hidden md:flex items-center space-x-6">
-                    <a href="index.html" class="nav-link text-gray-800 font-medium hover:text-primary">Home</a>
-                    <a href="shop.html" class="nav-link text-gray-800 font-medium hover:text-secondary">Shop</a>
-                    <a href="about.html" class="nav-link text-gray-800 font-medium hover:text-primary">About Us</a>
-                    <a href="contact.html" class="nav-link text-gray-800 font-medium hover:text-secondary">Contact</a>
-                    <a href="/Petals and Truffles/login.html" class="nav-link text-gray-800 font-medium hover:text-secondary">login</a>
+                    <a href="{{url_for('index')}}" class="nav-link text-gray-800 font-medium hover:text-primary">Home</a>
+                    <a href="{{url_for('shop')}}" class="nav-link text-gray-800 font-medium hover:text-secondary">Shop</a>
+                    <a href="{{url_for('about')}}" class="nav-link text-gray-800 font-medium hover:text-primary">About Us</a>
+                    <a href="{{url_for('contact')}}" class="nav-link text-gray-800 font-medium hover:text-secondary">Contact</a>
+                    <a href="{{url_for('login')}}" class="nav-link text-gray-800 font-medium hover:text-secondary">login</a>
+                    <a href="{{url_for('register')}}" class="nav-link text-gray-800 font-medium hover:text-secondary">Register</a>
                     <a href="#" class="ml-4 bg-primary hover:bg-pink-600 text-white font-medium py-2 px-6 rounded-full transition duration-300">
                         <i class="fas fa-shopping-cart mr-2"></i> Cart
                     </a>
@@ -60,10 +62,12 @@
             <!-- Mobile Navigation -->
             <div class="md:hidden hidden py-4" id="mobile-menu">
                 <div class="flex flex-col space-y-4">
-                    <a href="index.html" class="nav-link text-gray-800 font-medium hover:text-primary">Home</a>
-                    <a href="shop.html" class="nav-link text-gray-800 font-medium hover:text-secondary">Shop</a>
-                    <a href="about.html" class="nav-link text-gray-800 font-medium hover:text-primary">About Us</a>
-                    <a href="contact.html" class="nav-link text-gray-800 font-medium hover:text-secondary">Contact</a>
+                    <a href="{{url_for('index')}}" class="nav-link text-gray-800 font-medium hover:text-primary">Home</a>
+                    <a href="{{url_for('shop')}}" class="nav-link text-gray-800 font-medium hover:text-secondary">Shop</a>
+                    <a href="{{url_for('about')}}" class="nav-link text-gray-800 font-medium hover:text-primary">About Us</a>
+                    <a href="{{url_for('contact')}}" class="nav-link text-gray-800 font-medium hover:text-secondary">Contact</a>
+                    <a href="{{url_for('login')}}" class="nav-link text-gray-800 font-medium hover:text-secondary">login</a>
+                    <a href="{{url_for('register')}}" class="nav-link text-gray-800 font-medium hover:text-secondary">Register</a>
                     <a href="#" class="bg-primary hover:bg-pink-600 text-white font-medium py-2
 
  px-6 rounded-full text-center transition duration-300">
@@ -93,7 +97,7 @@
         <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8" id="product-grid">
             <!-- Flowers -->
             <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
-                <img src="/resources/roses.jpg" alt="Elegant Roses" class="w-full h-64 object-cover">
+                <img src="{{url_for('static', filename='images/roses.jpg')}}" alt="Elegant Roses" class="w-full h-contain object-cover">
                 <div class="p-6">
                     <h3 class="text-xl font-semibold text-gray-800 mb-2">Elegant Roses</h3>
                     <p class="text-gray-600 mb-4">A beautiful arrangement of fresh roses, perfect for any occasion.</p>
@@ -102,7 +106,7 @@
                 </div>
             </div>
             <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
-                <img src="/resources/sunflower2.png" alt="Sunflower Delight" class="w-full h-64 object-cover">
+                <img src="{{url_for('static', filename='images/sunflower.png')}}" alt="Sunflower Delight" class="w-full h-contain object-cover">
                 <div class="p-6">
                     <h3 class="text-xl font-semibold text-gray-800 mb-2">Sunflower Delight</h3>
                     <p class="text-gray-600 mb-4">Brighten your day with our cheerful sunflower arrangements.</p>
@@ -111,7 +115,7 @@
                 </div>
             </div>
             <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
-                <img src="/resources/tulip.png" alt="Tulip Bliss" class="w-full h-64 object-cover">
+                <img src="{{url_for('static', filename='images/tulip.png')}}" alt="Tulip Bliss" class="w-contain h-contain object-cover">
                 <div class="p-6">
                     <h3 class="text-xl font-semibold text-gray-800 mb-2">Tulip Bliss</h3>
                     <p class="text-gray-600 mb-4">Experience the beauty of tulips in a stunning arrangement.</p>
@@ -120,7 +124,7 @@
                 </div>
             </div>
             <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
-                <img src="/resources/lily2.png" alt="Lily Elegance" class="w-full h-64 object-cover">
+                <img src="{{url_for('static', filename='images/lily2.png')}}" alt="Lily Elegance" class="w-full h-contain object-cover">
                 <div class="p-6">
                     <h3 class="text-xl font-semibold text-gray-800 mb-2">Lily Elegance</h3>
                     <p class="text-gray-600 mb-4">A sophisticated arrangement of lilies for a touch of elegance.</p>
@@ -129,7 +133,7 @@
                 </div>
             </div>
             <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
-                <img src="/resources/daisy.png" alt="Daisy Charm" class="w-full h-64 object-cover">
+                <img src="{{url_for('static', filename='images/daisy.png')}}" alt="Daisy Charm" class="w-full h-contain object-cover">
                 <div class="p-6">
                     <h3 class="text-xl font-semibold text-gray-800 mb-2">Daisy Charm</h3>
                     <p class="text-gray-600 mb-4">A charming arrangement of daisies to brighten your space.</p>
@@ -138,7 +142,7 @@
                 </div>
             </div>
             <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
-                <img src="/resources/mixed2.png" alt="Mixed Bouquet" class="w-full h-64 object-cover">
+                <img src="{{url_for('static', filename='images/mixed2.png')}}" alt="mixed bouque" class="w-full h-81 object-cover">
                 <div class="p-6">
                     <h3 class="text-xl font-semibold text-gray-800 mb-2">Mixed Bouquet</h3>
                     <p class="text-gray-600 mb-4">A delightful mix of seasonal flowers for any occasion.</p>
@@ -148,7 +152,7 @@
             </div>
             <!-- Chocolates -->
             <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
-                <img src="https://images.unsplash.com/photo-1600804340584-c7db2eacf0b8?q=80&w=800&auto=format&fit=crop" alt="Dark Chocolate Truffles" class="w-full h-64 object-cover">
+                <img src="{{url_for('static', filename='images/darkchoco.png')}}" alt="Dark Chocolate Truffles" class="w-full h-81 object-cover">
                 <div class="p-6">
                     <h3 class="text-xl font-semibold text-gray-800 mb-2">Dark Chocolate Truffles</h3>
                     <p class="text-gray-600 mb-4">Rich, velvety dark chocolate truffles handcrafted to perfection.</p>
@@ -157,7 +161,7 @@
                 </div>
             </div>
             <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
-                <img src="https://images.unsplash.com/photo-1619961549774-36c9f316af83?q=80&w=800&auto=format&fit=crop" alt="Milk Chocolate Assortment" class="w-full h-64 object-cover">
+                <img src="{{url_for('static', filename='images/milkassortment.png')}}" class="w-full h-81 object-cover">
                 <div class="p-6">
                     <h3 class="text-xl font-semibold text-gray-800 mb-2">Milk Chocolate Assortment</h3>
                     <p class="text-gray-600 mb-4">A delightful variety of creamy milk chocolates in elegant packaging.</p>
@@ -166,7 +170,7 @@
                 </div>
             </div>
             <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
-                <img src="https://images.unsplash.com/photo-1601001815359-c8d9e4350a34?q=80&w=800&auto=format&fit=crop" alt="Caramel Chocolate Box" class="w-full h-64 object-cover">
+                <img src="{{url_for('static', filename='images/caramel.png')}}" alt="Caramel Chocolate Box" class="w-full h-81 object-cover">
                 <div class="p-6">
                     <h3 class="text-xl font-semibold text-gray-800 mb-2">Caramel Chocolate Box</h3>
                     <p class="text-gray-600 mb-4">Indulgent caramel-filled chocolates for a sweet escape.</p>
