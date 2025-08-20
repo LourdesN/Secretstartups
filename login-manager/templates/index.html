@@ -7,7 +7,7 @@
     <meta name="description" content="Luxurious chocolate and floral arrangements for every occasion">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="/static/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">  
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
     <script>
@@ -30,55 +30,78 @@
     </script>
 </head>
 <body class="font-montserrat" id="home">
-    <!-- Navigation Bar -->
-    <nav class="bg-white shadow-sm sticky top-0 z-50">
-        <div class="container mx-auto px-6 py-4">
-            <div class="flex justify-between items-center">
-                <!-- Logo on the navbar -->
-                <div class="flex items-center">
-                    <span class="font-playfair text-2xl font-bold">
-                        <span class="text-primary">Petals</span> & <span class="text-secondary">Truffles</span>
-                    </span>
-                </div>
-                
-                <!-- Desktop Navigation -->
-                <div class="hidden md:flex items-center space-x-6">
-                    <a href="{{url_for('index')}}" class="nav-link text-gray-800 font-medium hover:text-primary">Home</a>
-                    <a href="{{url_for('shop')}}" class="nav-link text-gray-800 font-medium hover:text-secondary">Shop</a>
-                    <a href="{{url_for('about')}}" class="nav-link text-gray-800 font-medium hover:text-primary">About Us</a>
-                    <a href="{{url_for('contact')}}" class="nav-link text-gray-800 font-medium hover:text-secondary">Contact</a>
-                    <a href="{{url_for('login')}}" class="nav-link text-gray-800 font-medium hover:text-secondary">login</a>
-                    <a href="{{url_for('register')}}" class="nav-link text-gray-800 font-medium hover:text-secondary">Register</a>
-
-                    <a href="#" class="ml-4 bg-primary hover:bg-pink-600 text-white font-medium py-2 px-6 rounded-full transition duration-300">
-                        <i class="fas fa-shopping-cart mr-2"></i> Cart
-                    </a>
-                </div>
-                
-                <!-- Mobile menu button -->
-                <div class="md:hidden flex items-center">
-                    <button type="button" class="text-gray-800 hover:text-primary focus:outline-none" id="mobile-menu-button">
-                        <i class="fas fa-bars text-2xl"></i>
-                    </button>
-                </div>
+<!-- Navigation Bar -->
+<nav class="bg-white shadow-sm sticky top-0 z-50">
+    <div class="container mx-auto px-6 py-4">
+        <div class="flex justify-between items-center">
+            <!-- Logo on the navbar -->
+            <div class="flex items-center">
+                <span class="font-playfair text-2xl font-bold text-primary">
+                    <span class="text-primary">Petals</span> &amp; <span class="text-secondary">Truffles</span>
+                </span>
             </div>
             
-            <!-- Mobile Navigation -->
-            <div class="md:hidden hidden py-4" id="mobile-menu">
-                <div class="flex flex-col space-y-4">
-                    <a href="{{url_for('index')}}" class="nav-link text-gray-800 font-medium hover:text-primary">Home</a>
-                    <a href="{{url_for('shop')}}" class="nav-link text-gray-800 font-medium hover:text-secondary">Shop</a>
-                    <a href="{{url_for('about')}}" class="nav-link text-gray-800 font-medium hover:text-primary">About Us</a>
-                    <a href="{{url_for('contact')}}" class="nav-link text-gray-800 font-medium hover:text-secondary">Contact</a>
-                    <a href="{{url_for('login')}}" class="nav-link text-gray-800 font-medium hover:text-secondary">login</a>
-                    <a href="{{url_for('register')}}" class="nav-link text-gray-800 font-medium hover:text-secondary">Register</a>
-                    <a href="#" class="bg-primary hover:bg-pink-600 text-white font-medium py-2 px-6 rounded-full text-center transition duration-300">
-                        <i class="fas fa-shopping-cart mr-2"></i> Cart
-                    </a>
-                </div>
+            <!-- Desktop Navigation -->
+            <div class="hidden md:flex items-center space-x-6">
+                <a href="{{ url_for('index') }}" class="nav-link text-gray-800 font-medium hover:text-primary">Home</a>
+                <a href="{{ url_for('shop') }}" class="nav-link text-gray-800 font-medium hover:text-secondary">Shop</a>
+                <a href="{{ url_for('about') }}" class="nav-link text-gray-800 font-medium hover:text-primary">About Us</a>
+                <a href="{{ url_for('contact') }}" class="nav-link text-gray-800 font-medium hover:text-secondary">Contact</a>
+
+                {% if current_user.is_authenticated %}
+                    <!-- Show username + logout if logged in -->
+                    <div class="flex items-center space-x-4">
+                        <span class="text-gray-800 font-medium">
+                            <i class="fas fa-user mr-1"></i> {{ current_user.username }}
+                        </span>
+                        <a href="{{ url_for('logout') }}" class="nav-link text-red-500 font-medium hover:text-red-700">Logout</a>
+                    </div>
+                {% else %}
+                    <!-- Show login/register if NOT logged in -->
+                    <a href="{{ url_for('login') }}" class="nav-link text-gray-800 font-medium hover:text-secondary">Login</a>
+                    <a href="{{ url_for('register') }}" class="nav-link text-gray-800 font-medium hover:text-secondary">Register</a>
+                {% endif %}
+
+                <a href="#" class="ml-4 bg-primary hover:bg-pink-600 text-white font-medium py-2 px-6 rounded-full transition duration-300">
+                    <i class="fas fa-shopping-cart mr-2"></i> Cart
+                </a>
+            </div>
+            
+            <!-- Mobile menu button -->
+            <div class="md:hidden flex items-center">
+                <button type="button" class="text-gray-800 hover:text-primary focus:outline-none" id="mobile-menu-button">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
             </div>
         </div>
-    </nav>
+        
+        <!-- Mobile Navigation -->
+        <div class="md:hidden hidden py-4" id="mobile-menu">
+            <div class="flex flex-col space-y-4">
+                <a href="{{ url_for('index') }}" class="nav-link text-gray-800 font-medium hover:text-primary">Home</a>
+                <a href="{{ url_for('shop') }}" class="nav-link text-gray-800 font-medium hover:text-secondary">Shop</a>
+                <a href="{{ url_for('about') }}" class="nav-link text-gray-800 font-medium hover:text-primary">About Us</a>
+                <a href="{{ url_for('contact') }}" class="nav-link text-gray-800 font-medium hover:text-secondary">Contact</a>
+
+                {% if current_user.is_authenticated %}
+                    <span class="text-gray-800 font-medium">
+                        <i class="fas fa-user mr-1"></i> {{ current_user.username }}
+                    </span>
+                    <a href="{{ url_for('logout') }}" class="nav-link text-red-500 font-medium hover:text-red-700">Logout</a>
+                {% else %}
+                    <a href="{{ url_for('login') }}" class="nav-link text-gray-800 font-medium hover:text-secondary">Login</a>
+                    <a href="{{ url_for('register') }}" class="nav-link text-gray-800 font-medium hover:text-secondary">Register</a>
+                {% endif %}
+
+                <a href="#" class="bg-primary hover:bg-pink-600 text-white font-medium py-2 px-6 rounded-full text-center transition duration-300">
+                    <i class="fas fa-shopping-cart mr-2"></i> Cart
+                </a>
+            </div>
+        </div>
+    </div>
+</nav>
+
+
 
     <!-- Hero Section -->
     <section class="hero-gradient h-27 flex items-center relative overflow-hidden pt-16">
